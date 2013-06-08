@@ -23,6 +23,9 @@ class Main {
 		
 		def world = new World(worldSize)
 		println "Your are tard"
+		
+		print 'This justin print statement'
+		
 		def gb = new GraphicsBuilder()
 		
 		def go = gb.group {
