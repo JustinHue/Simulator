@@ -22,7 +22,7 @@ class Main {
 		Tile.SIZE = Configuration.get_config_value("tilesize", 32).toInteger()
 		
 		def world = new World(worldSize)
-		
+		println "Your are tard"
 		def gb = new GraphicsBuilder()
 		
 		def go = gb.group {
