@@ -9,7 +9,6 @@ class Main {
 	
 	static main(args) {
 		
-		
 		def reswidth = Configuration.get_config_value("reswidth", 800).toInteger()
 		def resheight = Configuration.get_config_value("resheight", 600).toInteger()
 		def title = Configuration.get_config_value("title", "").toString()
