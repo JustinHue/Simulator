@@ -6,6 +6,11 @@ class World {
 
 	private def tiles
 	
+	
+	
+	
+	
+	
 	World(def size) {
 		Random rand = new Random()
 		tiles = [size].each { row ->
