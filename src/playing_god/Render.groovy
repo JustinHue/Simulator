@@ -5,4 +5,8 @@ class Render {
 	Render() {
 		
 	}
+	
+	def draw_simulator() {
+		
+	}
 }
