@@ -1,9 +1,12 @@
 package playing_god
 
+import com.sun.org.apache.bcel.internal.generic.RETURN;
+
 import groovy.swing.SwingBuilder
 import groovy.swing.j2d.GraphicsBuilder
 import groovy.swing.j2d.GraphicsPanel
 import static javax.swing.JFrame.EXIT_ON_CLOSE
+/*
 
 class Main {
 	
@@ -40,3 +43,9 @@ class Main {
 
 	}
 }
+
+*/
+
+def world = new World(32, 64)
+print world.getSizeY()
+

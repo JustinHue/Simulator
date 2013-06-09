@@ -5,24 +5,35 @@ import java.util.Random
 class World {
 
 	private def tiles
+	private def entities
 	
-	World(def size) {
-		Random rand = new Random()
-		tiles = [size].each { row ->
-			row = [size].each { type ->
-				type = new Tile(rand.nextInt(9))
-				print(tiles.size())
-			}
-		}
+	World(def size_w = 0, def size_h = 0) {
+		tiles = new Tile[size_h][size_w]
+		entities = []
 	}
 	
 	def getTileAt(def column, def row) {
-		print(tiles[1])
-
+		return tiles[column][row]
 	}
 	
-	def getSize() {
+	def getSizeX() {
 		return tiles[0].size()
+	}
+	
+	def getSizeY() {
+		return tiles.size()	
+	}
+	
+	def getTotalSize() {
+		return tiles.size() * tiles[0].size()
+	}
+	
+	def getEntities() {
+		return entities	
+	}
+	
+	def update() {
+		
 	}
 
 }
