@@ -1,0 +1,2 @@
+Log Start
+Main was called
