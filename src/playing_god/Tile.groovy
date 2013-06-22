@@ -12,4 +12,14 @@ class Tile {
 		return this.type
 	}
 	
+	def update() {
+		print 'I am updating'
+		
+	}
+	
+	def draw() {
+		
+	}
+	
+	
 }

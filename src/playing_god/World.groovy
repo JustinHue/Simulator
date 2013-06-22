@@ -33,6 +33,10 @@ class World {
 	}
 	
 	def update() {
+		tiles.each { it.update() }
+	}
+	
+	def draw() {
 		
 	}
 
