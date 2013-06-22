@@ -1,6 +1,7 @@
 package playing_god
 
 import java.util.Random
+import java.util.logging.Level
 
 class World {
 
@@ -33,11 +34,13 @@ class World {
 	}
 	
 	def update() {
+		Main.LOGGER.log(Level.FINE, "Updating world:reference:" + this)
 		tiles.each { it.update() }
 	}
 	
 	def draw() {
-		
+		Main.LOGGER.log(Level.FINE, "Drawing world:reference:" + this)
+		tiles.each { it.draw() }
 	}
 
 }

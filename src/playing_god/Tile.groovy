@@ -1,5 +1,7 @@
 package playing_god
 
+import java.util.logging.Level
+
 class Tile {
 
 	private def type
@@ -13,12 +15,11 @@ class Tile {
 	}
 	
 	def update() {
-		print 'I am updating'
-		
+		Main.LOGGER.log(Level.FINE, "Updating tile:reference:" + this)
 	}
 	
 	def draw() {
-		
+		Main.LOGGER.log(Level.FINE, "Drawing tile:reference:" + this)
 	}
 	
 	

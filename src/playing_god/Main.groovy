@@ -13,6 +13,7 @@ import java.awt.Frame;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE
 
+
 import java.util.logging.FileHandler
 import java.util.logging.Level
 import java.util.logging.Logger;
@@ -32,8 +33,8 @@ class Main {
 		LOGGER.addHandler(FH)
 		
 		LOGGER.setLevel(Level.ALL)
-		LOGGER.log(Level.FINE, "SDFDS")
 		
+		LOGGER.log(Level.FINE, "Reading simulator config file...")
 		// SET CONFIGURATION FILE AND GRAB CONFIG VALUES
 		Configuration.set_config_file("simulator.cfg")
 		
@@ -52,20 +53,19 @@ class Main {
 		def cfgLocationX = Configuration.get_config_value("locationX", null)
 		def cfgLocationY = Configuration.get_config_value("locationY", null)
 		
-		/*
+		
+		def world = new World()
+		
+		LOGGER.log(Level.FINE, "Creating graphics builder...")
+		
 		def gb = new GraphicsBuilder()
 		
 		def go = gb.group {
-		   rect( x: 0, y: 0, width: reswidth, height: resheight, borderColor: innerBorderColor, fill: backgroundColor )
-		   
-		   for (def column = 0; column < Tile.SIZE; ++column) {
-			   for (def row = 0; row < Tile.SIZE; ++row) {
-				 	def tile = world.getTileAt(column, row)
 
-			   }
-		   }
+			world.draw()
+	
 		}
-		  */
+		 
 		
 		def swing = new SwingBuilder()
 		
@@ -75,15 +75,17 @@ class Main {
 								preferredSize:new Dimension(cfgPreferredSize[0].toInteger(), cfgPreferredSize[1].toInteger()),
 								resizable: cfgResizable, show:cfgShowing, defaultCloseOperation: cfgDefaultCloseOperation,
 								locationRelativeTo: cfgLocationRelativeTo, state:cfgState, undecorated:cfgUndecorated) {
-				
+				panel( new GraphicsPanel(), graphicsOperation: go )
 			}
 				
 			if (cfgLocationX != null && cfgLocationY != null) {		
 				frame.setLocation(cfgLocationX.toInteger(), cfgLocationY.toInteger())
 			}
 			
+			
 		}
-
+		
+		
 	}
 }
 
