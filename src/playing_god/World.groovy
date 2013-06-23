@@ -1,5 +1,6 @@
 package playing_god
 
+import java.awt.Graphics2D
 import java.util.Random
 import java.util.logging.Level
 
@@ -38,9 +39,9 @@ class World {
 		tiles.each { it.update() }
 	}
 	
-	def draw() {
+	def draw(Graphics2D g2d) {
 		Main.LOGGER.log(Level.FINE, "Drawing world:reference:" + this)
-		tiles.each { it.draw() }
+		//tiles.each { it.draw() }
 	}
 
 }

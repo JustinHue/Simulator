@@ -1,8 +1,9 @@
 package playing_god
 
 
-class Entity {
 
+class Entity {
+	
 	private def x, y
 	private def width, height
 	private def xSpeed, ySpeed
