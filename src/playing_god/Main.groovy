@@ -45,7 +45,7 @@ class Main {
 	static FileHandler LOGGER_FH = null
 	
 	// DEFINE SIMULATOR OBJECTS
-	static World WORLD
+	static World World
 	
 	static main(args) {
 
@@ -79,13 +79,14 @@ class Main {
 		// CREATING SIMULATOR OBJECTS
 		LOGGER.log(Level.FINE, "CREATING SIMULATOR OBJECTS")
 		
-		WORLD = new World()
+		World = new World()
 		
 		
 		// CREATING GRAPHICS BUILDER
 		LOGGER.log(Level.FINE, "CREATING GRAPHICS BUILDER")
 
-		GRAPHICS_BUILDER = new GraphicsBuilder() 
+		GRAPHICS_BUILDER = new GraphicsBuilder()
+		
 		GP = new GraphicsPanel()
 		
 		// CREATING SWING BUILDER
@@ -116,15 +117,13 @@ class Main {
 	}
 
 	static render() {
-		GO = GRAPHICS_BUILDER.group( borderColor: 'blue', borderWidth: 4, fill: 'cyan' ) {
-			WORLD.update()
-		    rect( x: 10, y: 10, width: 290, height: 80, arcWidth: 20, arcHeight: 20 )
-		    circle( cx: 90, cy: 80, radius: 50, borderColor: 'darkRed', fill: 'red' )
-		    polygon(points: [175, 38, 229, 69, 229, 131, 175, 162, 121, 131, 121, 69])
-
-		}
 		
+		GO = GRAPHICS_BUILDER.group {
+			World.draw(GRAPHICS_BUILDER)
+		}
+
 		GP.setGo(GO)
+		
 	}
 	
 	static update() {
